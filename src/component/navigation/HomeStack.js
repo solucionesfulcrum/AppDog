@@ -1,18 +1,29 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Principal from '../../screens/main/Principal'
-
+import Detalle from '../../screens/main/Detalle'
+import splash from '../../screens/intro/splash'
 
 const Stack = createStackNavigator();
 
 const HomeStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Principal"
+      initialRouteName="splash"
       >
+      <Stack.Screen
+        name="splash"
+        component={splash}
+        options={{header: () => null}}
+      />
       <Stack.Screen
         name="Principal"
         component={Principal}
+        options={{header: () => null}}
+      />
+      <Stack.Screen
+        name="Detalle"
+        component={Detalle}
         options={{header: () => null}}
       />
     </Stack.Navigator>
